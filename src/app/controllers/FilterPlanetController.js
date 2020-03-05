@@ -7,9 +7,11 @@ class FilterPlanetController {
         { name: req.params.name },
         'name climate terrain numberOfMovies'
       );
+
       if (planet) {
         return res.status(200).send(planet);
       }
+
       return res
         .status(400)
         .send({ message: `Planeta ${req.params.name} não está cadastrado.` });
@@ -24,7 +26,12 @@ class FilterPlanetController {
         { _id: req.params.id },
         'name climate terrain numberOfMovies'
       );
-      return res.status(200).send(planet);
+
+      if (planet) {
+        return res.status(200).send(planet);
+      }
+
+      return res.status(400).send({ message: 'ID inválido.' });
     } catch (err) {
       return res.status(400).send({ error: 'Erro ao realizar a consulta.' });
     }

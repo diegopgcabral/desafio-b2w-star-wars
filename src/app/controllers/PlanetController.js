@@ -1,7 +1,30 @@
 import axios from 'axios';
 import Planet from '../model/Planet';
 
+import Cache from '../../lib/Cache';
+
 class PlanetController {
+  async index(req, res) {
+    const cached = await Cache.get('planets');
+
+    if (cached) {
+      return res.json(cached);
+    }
+
+    try {
+      const planets = await Planet.find(
+        {},
+        'name climate terrain numberOfMovies'
+      );
+
+      await Cache.set('planets', planets);
+
+      return res.status(200).json(planets);
+    } catch (err) {
+      return res.status(400).send({ error: 'Erro ao realizar a consulta.' });
+    }
+  }
+
   async store(req, res) {
     try {
       const checkPlanet = await Planet.findOne({ name: req.body.name });
@@ -12,7 +35,7 @@ class PlanetController {
           .json({ error: `Planeta ${req.body.name} já cadastrado!` });
       }
 
-      const response = await axios.get(`https://swapi.co/api/planets/`, {
+      const response = await axios.get(process.env.SWAPI_URL, {
         params: { search: req.body.name },
       });
 
@@ -27,6 +50,8 @@ class PlanetController {
         numberOfMovies,
       });
 
+      await Cache.invalidate('planets');
+
       return res.status(201).json({
         _id,
         name,
@@ -37,6 +62,7 @@ class PlanetController {
     } catch (error) {
       return res.status(400).json({
         error: `Não foi possível cadastrar o Planeta ${req.body.name}!`,
+        data: error,
       });
     }
   }
@@ -51,21 +77,12 @@ class PlanetController {
         error: 'ID inválido',
       });
     }
+
+    await Cache.invalidate('planets');
+
     return res.status(200).json({
       message: 'Planeta removido com sucesso',
     });
-  }
-
-  async index(req, res) {
-    try {
-      const planets = await Planet.find(
-        {},
-        'name climate terrain numberOfMovies'
-      );
-      return res.status(200).send(planets);
-    } catch (err) {
-      return res.status(400).send({ error: 'Erro ao realizar a consulta.' });
-    }
   }
 }
 
