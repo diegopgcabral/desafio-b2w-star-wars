@@ -45,20 +45,14 @@ class PlanetController {
         numberOfMovies = response.data.results[0].films.length;
       }
 
-      const { _id, name, climate, terrain } = await Planet.create({
+      const planet = await Planet.create({
         ...req.body,
         numberOfMovies,
       });
 
       await Cache.invalidate('planets');
 
-      return res.status(201).json({
-        _id,
-        name,
-        climate,
-        terrain,
-        numberOfMovies,
-      });
+      return res.status(201).json(planet);
     } catch (error) {
       return res.status(400).json({
         error: `Não foi possível cadastrar o Planeta ${req.body.name}!`,

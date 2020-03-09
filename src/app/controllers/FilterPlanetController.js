@@ -9,11 +9,11 @@ class FilterPlanetController {
       );
 
       if (planet) {
-        return res.status(200).send(planet);
+        return res.status(200).json(planet);
       }
 
       return res
-        .status(400)
+        .status(404)
         .send({ message: `Planeta ${req.params.name} não está cadastrado.` });
     } catch (err) {
       return res.status(400).send({ error: 'Erro ao realizar a consulta.' });
@@ -28,10 +28,10 @@ class FilterPlanetController {
       );
 
       if (planet) {
-        return res.status(200).send(planet);
+        return res.status(200).json(planet);
       }
 
-      return res.status(400).send({ message: 'ID inválido.' });
+      return res.status(404).send({ message: 'ID inválido.' });
     } catch (err) {
       return res.status(400).send({ error: 'Erro ao realizar a consulta.' });
     }
