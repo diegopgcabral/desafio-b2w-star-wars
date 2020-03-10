@@ -1,6 +1,10 @@
 import * as Yup from 'yup';
+import Logger from '../../utils/logger';
 
 export default async (req, res, next) => {
+  Logger.info(
+    'PlanetStore::validate => Validando campos obrigatórios para planeta.'
+  );
   try {
     const schema = Yup.object().shape({
       name: Yup.string()
@@ -15,8 +19,14 @@ export default async (req, res, next) => {
     });
 
     await schema.validate(req.body, { abortEarly: false });
+    Logger.info(
+      'PlanetStore::validate => Campos obrigatórios validados com sucesso.'
+    );
     return next();
   } catch (err) {
+    Logger.error(
+      'PlanetStore::validate => Um ou mais campos obrigatórios não foram informados.'
+    );
     return res.status(400).json({
       error: 'Falha na validação dos campos',
       description: err.errors,

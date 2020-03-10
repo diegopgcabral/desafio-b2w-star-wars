@@ -5,7 +5,6 @@ import swaggerSpec from './config/swagger';
 
 import PlanetController from './app/controllers/PlanetController';
 import FilterPlanetController from './app/controllers/FilterPlanetController';
-
 import validatePlanetStore from './app/validators/PlanetStore';
 
 const routes = new Router();
@@ -124,7 +123,7 @@ routes.get('/planets/:id', FilterPlanetController.show);
 /**
  * @swagger
  *
- * /planets/{name}:
+ * /planets/search/{name}:
  *   get:
  *     tags:
  *       - Planet
