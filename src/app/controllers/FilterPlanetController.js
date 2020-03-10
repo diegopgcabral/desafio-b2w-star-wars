@@ -26,7 +26,7 @@ class FilterPlanetController {
       Logger.error(
         'FilterPlanetController::index => Erro ao realizar consulta no BD.'
       );
-      return res.status(400).send({ error: 'Erro ao realizar a consulta.' });
+      return res.status(500).send({ error: 'Erro ao realizar a consulta.' });
     }
   }
 
@@ -52,7 +52,7 @@ class FilterPlanetController {
       Logger.error(
         'FilterPlanetController::show => Erro ao realizar consulta no BD.'
       );
-      return res.status(400).send({ error: 'Erro ao realizar a consulta.' });
+      return res.status(500).send({ error: 'Erro ao realizar a consulta.' });
     }
   }
 }

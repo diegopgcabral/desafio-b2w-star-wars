@@ -15,7 +15,7 @@ routes.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 /**
  * @swagger
  * definitions:
- *   NewPlanet:
+ *   Novo_Planeta:
  *     properties:
  *       name:
  *         type: string
@@ -23,7 +23,7 @@ routes.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
  *         type: string
  *       terrain:
  *         type: string
- *   Planet:
+ *   Planeta:
  *     properties:
  *       _id:
  *         type: string
@@ -43,24 +43,27 @@ routes.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
  * /planets:
  *   post:
  *     tags:
- *       - Planet
- *     description: Cria um planeta
+ *       - Planeta
+ *     summary: Cria um novo planeta
+ *     description: Cria um novo planeta
  *     produces:
  *       - application/json
  *     parameters:
- *       - name: Planet
- *         description: Planet object
+ *       - name: Planeta
+ *         description: JSON do planeta
  *         in:  body
  *         required: true
  *         type: object
  *         schema:
- *           $ref: '#/definitions/NewPlanet'
+ *           $ref: '#/definitions/Novo_Planeta'
  *     responses:
  *       201:
  *         description: Planeta cadastrado com sucesso.
  *         schema:
- *           $ref: '#/definitions/Planet'
+ *           $ref: '#/definitions/Planeta'
  *       400:
+ *         description: Planeta já cadastrado.
+ *       500:
  *         description: Erro ao cadastrar o planeta.
  */
 
@@ -73,7 +76,8 @@ routes.post('/planets', validatePlanetStore, PlanetController.store);
  * /planets:
  *   get:
  *     tags:
- *       - Planet
+ *       - Planeta
+ *     summary: Lista todos os planetas cadastrados no BD
  *     description: Retorna todos os planetas cadastrados
  *     produces:
  *       - application/json
@@ -81,8 +85,8 @@ routes.post('/planets', validatePlanetStore, PlanetController.store);
  *       200:
  *         description: Retorna as informações dos planetas
  *         schema:
- *           $ref: '#/definitions/Planet'
- *       400:
+ *           $ref: '#/definitions/Planeta'
+ *       500:
  *         description: Erro ao realizar a consulta.
  */
 
@@ -95,13 +99,14 @@ routes.get('/planets', PlanetController.index);
  * /planets/{id}:
  *   get:
  *     tags:
- *       - Planet
+ *       - Planeta
+ *     summary: Retorna um planeta pelo ID
  *     description: Retorna um planeta pelo ID
  *     produces:
  *       - application/json
  *     parameters:
  *       - name: id
- *         description: Planet ID
+ *         description: ID do planeta
  *         in:  path
  *         required: true
  *         schema:
@@ -110,8 +115,8 @@ routes.get('/planets', PlanetController.index);
  *       200:
  *         description: Retorna as informações do planeta
  *         schema:
- *           $ref: '#/definitions/Planet'
- *       400:
+ *           $ref: '#/definitions/Planeta'
+ *       500:
  *         description: Erro ao realizar a consulta.
  *       404:
  *         description: ID inválido.
@@ -123,16 +128,17 @@ routes.get('/planets/:id', FilterPlanetController.show);
 /**
  * @swagger
  *
- * /planets/search/{name}:
+ * /planets/search/{nome}:
  *   get:
  *     tags:
- *       - Planet
+ *       - Planeta
+ *     summary: Retorna um planeta pelo nome
  *     description: Retorna um planeta pelo nome
  *     produces:
  *       - application/json
  *     parameters:
- *       - name: name
- *         description: Planet name
+ *       - name: nome
+ *         description: Nome do planeta
  *         in:  path
  *         required: true
  *         schema:
@@ -141,8 +147,8 @@ routes.get('/planets/:id', FilterPlanetController.show);
  *       200:
  *         description: Retorna as informações do planeta
  *         schema:
- *           $ref: '#/definitions/Planet'
- *       400:
+ *           $ref: '#/definitions/Planeta'
+ *       500:
  *         description: Erro ao realizar a consulta.
  *       404:
  *         description: Planeta não cadastrado.
@@ -157,13 +163,14 @@ routes.get('/planets/search/:name', FilterPlanetController.index);
  * /planets/{id}:
  *   delete:
  *     tags:
- *       - Planet
+ *       - Planeta
+ *     summary: Remove um planeta pelo ID
  *     description: Remove um planeta pelo ID
  *     produces:
  *       - application/json
  *     parameters:
  *       - name: id
- *         description: Planet ID
+ *         description: ID do planeta
  *         in:  path
  *         required: true
  *         schema:

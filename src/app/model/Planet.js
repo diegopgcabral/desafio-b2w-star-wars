@@ -21,6 +21,7 @@ const PlanetSchema = new mongoose.Schema(
     numberOfMovies: {
       type: Number,
       required: false,
+      default: 0,
     },
   },
   {

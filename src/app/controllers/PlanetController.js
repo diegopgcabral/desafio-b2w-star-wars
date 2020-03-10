@@ -29,7 +29,7 @@ class PlanetController {
       return res.status(200).json(planets);
     } catch (err) {
       Logger.error('PlanetController::index => Falha ao listar planeta(s)');
-      return res.status(400).send({ error: 'Erro ao realizar a consulta.' });
+      return res.status(500).send({ error: 'Erro ao realizar a consulta.' });
     }
   }
 
@@ -57,35 +57,38 @@ class PlanetController {
         params: { search: req.body.name },
       });
 
-      let numberOfMovies = 0;
-
       if (response.data.count > 0) {
         Logger.info(
           `PlanetController::SWAPI => Participacoes em filmes encontrada com sucesso.`
         );
-        numberOfMovies = response.data.results[0].films.length;
+        req.body.numberOfMovies = response.data.results[0].films.length;
       } else {
         Logger.error(
           `PlanetController::PlanetController => Participacoes em filmes nao foi encontrada.`
         );
       }
 
-      const planet = await Planet.create({
-        ...req.body,
+      const {
+        _id,
+        name,
+        climate,
+        terrain,
         numberOfMovies,
-      });
+      } = await Planet.create(req.body);
 
       await Cache.invalidate('planets');
 
       Logger.info(
         `PlanetController::store =>  Planeta ${req.body.name} cadastrado com sucesso.`
       );
-      return res.status(201).json(planet);
+      return res
+        .status(201)
+        .json({ _id, name, climate, terrain, numberOfMovies });
     } catch (error) {
       Logger.error(
         `PlanetController::store => Erro ao cadastrar planeta ${req.body.name}`
       );
-      return res.status(400).json({
+      return res.status(500).json({
         error: `Não foi possível cadastrar o Planeta ${req.body.name}!`,
         data: error,
       });
