@@ -17,10 +17,7 @@ class PlanetController {
     }
 
     try {
-      const planets = await Planet.find(
-        {},
-        'name climate terrain numberOfMovies'
-      );
+      const planets = await Planet.find();
 
       await Cache.set('planets', planets);
       Logger.info(
@@ -39,9 +36,9 @@ class PlanetController {
     );
 
     try {
-      const checkPlanet = await Planet.findOne({ name: req.body.name });
+      const hasPlanet = await Planet.findOne({ name: req.body.name });
 
-      if (checkPlanet) {
+      if (hasPlanet) {
         Logger.error(
           `PlanetController::store => Planeta ${req.body.name} já cadastrado`
         );
@@ -68,22 +65,14 @@ class PlanetController {
         );
       }
 
-      const {
-        _id,
-        name,
-        climate,
-        terrain,
-        numberOfMovies,
-      } = await Planet.create(req.body);
+      const planet = await Planet.create(req.body);
 
       await Cache.invalidate('planets');
 
       Logger.info(
         `PlanetController::store =>  Planeta ${req.body.name} cadastrado com sucesso.`
       );
-      return res
-        .status(201)
-        .json({ _id, name, climate, terrain, numberOfMovies });
+      return res.status(201).json(planet);
     } catch (error) {
       Logger.error(
         `PlanetController::store => Erro ao cadastrar planeta ${req.body.name}`
@@ -95,13 +84,12 @@ class PlanetController {
     }
   }
 
-  async delete(req, res) {
+  async destroy(req, res) {
     Logger.info(
       `PlanetController::delete =>  Iniciando exclusão do planeta de ID: ${req.params.id}`
     );
-    const existPlanet = await Planet.findByIdAndDelete({
-      _id: req.params.id,
-    }).exec();
+    const { id } = req.params;
+    const existPlanet = await Planet.findByIdAndDelete(id);
 
     if (!existPlanet) {
       Logger.warn(

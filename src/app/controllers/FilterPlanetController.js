@@ -7,8 +7,9 @@ class FilterPlanetController {
       `FilterPlanetController::index => Consultando o planeta ${req.params.name} no BD.`
     );
     try {
+      const { name } = req.params;
       const planet = await Planet.findOne(
-        { name: req.params.name },
+        { name },
         'name climate terrain numberOfMovies'
       );
 
@@ -35,8 +36,9 @@ class FilterPlanetController {
       `FilterPlanetController::show => Consultando o planeta de ID: ${req.params.id} no BD.`
     );
     try {
+      const { id } = req.params;
       const planet = await Planet.findById(
-        { _id: req.params.id },
+        id,
         'name climate terrain numberOfMovies'
       );
 

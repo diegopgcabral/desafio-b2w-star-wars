@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">37.5% </span>
+                <span class="strong">62.5% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>9/24</span>
+                <span class='fraction'>15/24</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">66.67% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/3</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">27.27% </span>
+                <span class="strong">81.82% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>3/11</span>
+                <span class='fraction'>9/11</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -96,14 +96,11 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -112,11 +109,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -130,12 +130,12 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import * as Yup from 'yup';<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="branch-1 cbranch-no" title="branch not covered" ><span class="missing-if-branch" title="else path not taken" >E</span></span></span></span></span></span></span></span></span>
 import Logger from '../../utils/logger';
 &nbsp;
-export default asyn<span class="fstat-no" title="function not covered" >c </span>(req, res, next) =&gt; {
-<span class="cstat-no" title="statement not covered" >  Logger.info(</span>
+export default async (req, res, next) =&gt; {
+  Logger.info(
     'PlanetStore::validate =&gt; Validando campos obrigatórios para planeta.'
   );
-<span class="cstat-no" title="statement not covered" >  try {</span>
-    const schema = <span class="cstat-no" title="statement not covered" >Yup.object().shape({</span>
+  try {
+    const schema = Yup.object().shape({
       name: Yup.string()
         .max(255)
         .required('Nome do planeta é obrigatório'),
@@ -147,11 +147,11 @@ export default asyn<span class="fstat-no" title="function not covered" >c </span
         .required('Terreno é obrigatório'),
     });
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    await schema.validate(req.body, { abortEarly: false });</span>
-<span class="cstat-no" title="statement not covered" >    Logger.info(</span>
+    await schema.validate(req.body, { abortEarly: false });
+    Logger.info(
       'PlanetStore::validate =&gt; Campos obrigatórios validados com sucesso.'
     );
-<span class="cstat-no" title="statement not covered" >    return next();</span>
+    return next();
   } catch (err) {
 <span class="cstat-no" title="statement not covered" >    Logger.error(</span>
       'PlanetStore::validate =&gt; Um ou mais campos obrigatórios não foram informados.'
@@ -169,7 +169,7 @@ export default asyn<span class="fstat-no" title="function not covered" >c </span
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Wed Mar 11 2020 16:36:43 GMT-0300 (GMT-03:00)
+                at Wed Mar 11 2020 18:28:01 GMT-0300 (GMT-03:00)
             </div>
         </div>
         <script src="../prettify.js"></script>

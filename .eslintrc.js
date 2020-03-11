@@ -22,6 +22,8 @@ module.exports = {
     "no-param-reassign": "off",
     'no-unused-vars': 'off',
     "camelcase": "off",
+    "no-await-in-loop": "off",
+    "no-restricted-syntax": "off",
     "no-unused-vars": ["error", {"argsIgnorePattern": "next"}],
   },
 };

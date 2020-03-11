@@ -1,34 +1,46 @@
 import request from 'supertest';
+import mongoose from 'mongoose';
+import { MongoMemoryServer } from 'mongodb-memory-server';
+
 import app from '../../src/app';
+// import Planet from '../../src/app/model/Planet';
 
-import Planet from '../../src/app/model/Planet';
+describe('Planet', () => {
+  let mongoServer;
+  beforeAll(async () => {
+    mongoServer = new MongoMemoryServer();
+    const URI = await mongoServer.getUri();
 
-describe('PLANETS', () => {
-  // const defaultCategoryId = '5e6924dcd6704700476eff0c';
-
-  const cleanDatabase = async () => {
-    await Planet.deleteMany({});
-  };
-
-  beforeEach(async () => {
-    await cleanDatabase();
-
-    const planet = {
-      name: 'Geonosis',
-      climate: 'murky',
-      terrain: 'swamp, jungles',
-    };
-    await Planet.insertMany([planet]);
+    mongoose.connect(URI, {
+      useCreateIndex: true,
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      useFindAndModify: false,
+    });
   });
 
-  afterEach(async () => cleanDatabase());
+  afterAll(async done => {
+    mongoose.disconnect(done);
+    await mongoServer.stop();
+  });
 
-  describe('GET/', () => {
-    it('Deve retornar todos os planetas', async () => {
-      const response = await request(app).get('/planets');
+  afterEach(async () => {
+    const collections = await mongoose.connection.db.collections();
 
-      expect(response.status).toBe(200);
-      expect(response.body).toBeInstanceOf(Object);
-    });
+    for (const collection of collections) {
+      await collection.deleteMany();
+    }
+  });
+
+  it('Deverá criar um novo planeta', async () => {
+    const response = await request(app)
+      .post('/planets')
+      .send({
+        name: 'Teste',
+        climate: 'Teste',
+        terrain: 'Teste',
+      });
+
+    expect(response.status).toBe(201);
   });
 });

@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import swaggerUi from 'swagger-ui-express';
 
+import swaggerUi from 'swagger-ui-express';
 import swaggerSpec from './config/swagger';
 
 import PlanetController from './app/controllers/PlanetController';
@@ -183,7 +183,7 @@ routes.get('/planets/search/:name', FilterPlanetController.index);
  */
 
 // Remover um planeta do BD
-routes.delete('/planets/:id', PlanetController.delete);
+routes.delete('/planets/:id', PlanetController.destroy);
 
 routes.get('/', (req, res) => {
   return res.status(200).json({ message: 'Desafio B2W - API RESTFul' });
