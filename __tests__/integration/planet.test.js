@@ -57,5 +57,6 @@ describe('Teste API Planetas Star Wars', () => {
       .send(planetWithFilms);
 
     expect(response.status).toBe(201);
+    expect(response.body).toHaveProperty('_id');
   });
 });
