@@ -5,7 +5,26 @@ import { MongoMemoryServer } from 'mongodb-memory-server';
 import app from '../../src/app';
 // import Planet from '../../src/app/model/Planet';
 
-describe('Planet', () => {
+const planetWithFilms = {
+  name: 'Geonosis',
+  climate: 'seco',
+  terrain: 'plano',
+};
+
+// const planetWithoutFilm = {
+//   name: 'Terra',
+//   climate: 'seco',
+//   terrain: 'plano',
+// };
+
+// const invalidPlanet = {
+//   name: 'Terra',
+//   climate: 'seco',
+//   terrain: 'plano',
+//   planetId: '5e694ed53603f00555a748bf',
+// };
+
+describe('Teste API Planetas Star Wars', () => {
   let mongoServer;
   beforeAll(async () => {
     mongoServer = new MongoMemoryServer();
@@ -35,11 +54,7 @@ describe('Planet', () => {
   it('Deverá criar um novo planeta', async () => {
     const response = await request(app)
       .post('/planets')
-      .send({
-        name: 'Teste',
-        climate: 'Teste',
-        terrain: 'Teste',
-      });
+      .send(planetWithFilms);
 
     expect(response.status).toBe(201);
   });
