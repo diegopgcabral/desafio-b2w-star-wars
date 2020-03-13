@@ -95,15 +95,15 @@ class PlanetController {
     Logger.info(
       `PlanetController::delete =>  Iniciando exclusão do planeta de ID: ${req.params.id}`
     );
-    const { id } = req.params;
-    const existPlanet = await Planet.findByIdAndDelete(id);
+    const { name } = req.params;
+    const existPlanet = await Planet.findOneAndRemove(name);
 
     if (!existPlanet) {
       Logger.warn(
-        `PlanetController::delete =>  Planeta de ID ${req.params.id} não encontrado.`
+        `PlanetController::delete =>  Planeta ${name} não encontrado.`
       );
       return res.status(404).json({
-        error: 'ID inválido',
+        error: 'Planeta não encontrado',
       });
     }
 
@@ -112,7 +112,7 @@ class PlanetController {
     }
 
     Logger.info(
-      `PlanetController::delete => Planeta de ID ${req.params.id} removido com sucesso.`
+      `PlanetController::delete => Planeta ${name} removido com sucesso.`
     );
     return res.status(200).json({
       message: 'Planeta removido com sucesso',

@@ -169,8 +169,8 @@ routes.get('/planets/search/:name', FilterPlanetController.index);
  *     produces:
  *       - application/json
  *     parameters:
- *       - name: id
- *         description: ID do planeta
+ *       - name: nome
+ *         description: nome do planeta
  *         in:  path
  *         required: true
  *         schema:
@@ -179,11 +179,11 @@ routes.get('/planets/search/:name', FilterPlanetController.index);
  *       200:
  *         description: Planeta removido com sucesso.
  *       404:
- *         description: ID inválido.
+ *         description: Nome inválido.
  */
 
 // Remover um planeta do BD
-routes.delete('/planets/:id', PlanetController.destroy);
+routes.delete('/planets/:name', PlanetController.destroy);
 
 routes.get('/', (req, res) => {
   return res.status(200).json({ message: 'Desafio B2W - API RESTFul' });

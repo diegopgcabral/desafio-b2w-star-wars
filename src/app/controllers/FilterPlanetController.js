@@ -22,7 +22,7 @@ class FilterPlanetController {
       );
       return res
         .status(404)
-        .send({ message: `Planeta ${req.params.name} não está cadastrado.` });
+        .send({ warn: `Planeta ${req.params.name} não está cadastrado.` });
     } catch (err) {
       Logger.error(
         'FilterPlanetController::index => Erro ao realizar consulta no BD.'
