@@ -24,7 +24,7 @@ const planetWithFilms = {
 //   planetId: '5e694ed53603f00555a748bf',
 // };
 
-describe('Teste API Planetas Star Wars', () => {
+describe('Desafio B2W - Teste API', () => {
   let mongoServer;
   beforeAll(async () => {
     mongoServer = new MongoMemoryServer();
@@ -38,8 +38,8 @@ describe('Teste API Planetas Star Wars', () => {
     });
   });
 
-  afterAll(async done => {
-    mongoose.disconnect(done);
+  afterAll(async () => {
+    mongoose.disconnect();
     await mongoServer.stop();
   });
 
@@ -51,12 +51,13 @@ describe('Teste API Planetas Star Wars', () => {
     }
   });
 
-  it('Deverá criar um novo planeta', async () => {
+  it('# Deverá criar um novo planeta', async () => {
     const response = await request(app)
       .post('/planets')
       .send(planetWithFilms);
 
     expect(response.status).toBe(201);
     expect(response.body).toHaveProperty('_id');
+    expect(response.body.numberOfMovies).toBeGreaterThanOrEqual(1);
   });
 });

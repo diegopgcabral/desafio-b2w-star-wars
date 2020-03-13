@@ -12,9 +12,9 @@ const logger = createLogger({
       maxFiles: 5,
       filename: `${__dirname}/../logs/log-api-b2w.log`,
     }),
-    new transports.Console({
-      level: 'debug',
-    }),
+    // new transports.Console({
+    //   level: 'debug',
+    // }),
   ],
 });
 

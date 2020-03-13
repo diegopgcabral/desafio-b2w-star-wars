@@ -7,19 +7,24 @@ import Logger from '../../utils/logger';
 class PlanetController {
   async index(req, res) {
     Logger.info('PlanetController::index => Iniciando listagem de planeta(s)');
-    const cached = await Cache.get('planets');
 
-    if (cached) {
-      Logger.info(
-        'PlanetController::index => Planeta(s) retornado(s) com sucesso.'
-      );
-      return res.json(cached);
+    if (process.env.NODE_ENV !== 'test') {
+      const cached = await Cache.get('planets');
+      if (cached) {
+        Logger.info(
+          'PlanetController::index => Planeta(s) retornado(s) com sucesso.'
+        );
+        return res.json(cached);
+      }
     }
 
     try {
       const planets = await Planet.find();
 
-      await Cache.set('planets', planets);
+      if (process.env.NODE_ENV !== 'test') {
+        await Cache.set('planets', planets);
+      }
+
       Logger.info(
         'PlanetController::index => Planeta(s) retornado(s) com sucesso.'
       );
@@ -60,14 +65,16 @@ class PlanetController {
         );
         req.body.numberOfMovies = response.data.results[0].films.length;
       } else {
-        Logger.error(
+        Logger.warn(
           `PlanetController::PlanetController => Participacoes em filmes nao foi encontrada.`
         );
       }
 
       const planet = await Planet.create(req.body);
 
-      await Cache.invalidate('planets');
+      if (process.env.NODE_ENV !== 'test') {
+        await Cache.invalidate('planets');
+      }
 
       Logger.info(
         `PlanetController::store =>  Planeta ${req.body.name} cadastrado com sucesso.`
@@ -100,7 +107,9 @@ class PlanetController {
       });
     }
 
-    await Cache.invalidate('planets');
+    if (process.env.NODE_ENV !== 'test') {
+      await Cache.invalidate('planets');
+    }
 
     Logger.info(
       `PlanetController::delete => Planeta de ID ${req.params.id} removido com sucesso.`
