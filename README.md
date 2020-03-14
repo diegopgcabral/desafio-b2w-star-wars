@@ -1,7 +1,5 @@
-# Desafio B2W - API Planetas - Star Wars
-
 <h1 align="center">
-  <img alt="Desafio B2W - Star Wars" title="stws" src="desafio-b2w-star-wars/src/assets/logo.png" width="300px" />
+  <img alt="Desafio B2W - Star Wars" title="stws" src="https://github.com/diegopgcabral/desafio-b2w-star-wars/blob/master/src/assets/logo.png" width="300px" />
 </h1>
 
 
@@ -44,7 +42,7 @@
 ## :rocket: Tecnologias
 
 ### :gear: BACK-END
--   [Node.js][nodejs]
+-   [Node.js](https://nodejs.org/en/)
 -   [Npm](https://www.npmjs.com/)
 -   [Express](https://expressjs.com/)
 -   [nodemon](https://nodemon.io/)
@@ -59,7 +57,7 @@
 - [Winston](https://github.com/winstonjs/winston)
 - [Jest](https://jestjs.io/)
 
-## :information_source :Instalação API
+## Instalação API
 
 Para rodar o projeto é necessário possuir [Git](https://git-scm.com), [Node.js][nodejs] + [Npm](https://www.npmjs.com/) instalados na máquina. Baixe o repositório e entre no diretório raiz do projeto.
 
@@ -81,8 +79,5 @@ $ docker-compose stop
 $ npm test
 ```
 
-## :memo: License
-
-This project is under the MIT license. See the [LICENSE](https://github.com/diegopgcabral/desafio-b2w-star-wars/blob/master/LICENSE) for more information.
 ---
 Diego Cabral :wave: [Linkedin](https://www.linkedin.com/in/diego-pg-cabral/)
