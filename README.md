@@ -4,14 +4,11 @@
   <img alt="Desafio B2W - Star Wars" title="stws" src="https://github.com/diegopgcabral/desafio-b2w-star-wars/blob/master/src/assets/logo.png" width="300px" />
 </h1>
 
-
-<p align="center">Projeto utilizado para construção do desafio da B2W(
-  <a href="#gear-back-end">Back-end</a>)</p>
-
-[![CircleCI](https://circleci.com/gh/diegopgcabral/desafio-b2w-star-wars/tree/master.svg?style=svg)](https://circleci.com/gh/diegopgcabral/desafio-b2w-star-wars/tree/master)
-
 <p align="left">
-  <a href="https://www.codacy.com/manual/diegopgcabral/desafio-b2w-star-wars?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=diegopgcabral/desafio-b2w-star-wars&amp;utm_campaign=Badge_Grade"></a>
+
+  <a href="https://circleci.com/gh/diegopgcabral/desafio-b2w-star-wars/tree/master"><img src="https://circleci.com/gh/diegopgcabral/desafio-b2w-star-wars/tree/master.svg?style=svg"/></a>
+
+  <a href="https://www.codacy.com/manual/diegopgcabral/desafio-b2w-star-wars?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=diegopgcabral/desafio-b2w-star-wars&amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/05d365f5eaf842a38d89c719b9559d8b"/></a>
 
   <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/diegopgcabral/desafio-b2w-star-wars?color=%2304D361">
 
@@ -53,7 +50,7 @@
 
 ## Instalação API
 
-
+Para clonar e rodar essa aplicação, você vai precisar do [Git](https://git-scm.com), [Node.js](https://nodejs.org/en/) + [Npm](https://www.npmjs.com/) instalados no seu computador.
 
 Na linha de comando do seu terminal:
 
