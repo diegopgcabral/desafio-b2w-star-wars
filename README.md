@@ -1,3 +1,5 @@
+# Desafio B2W - Star Wars
+
 <h1 align="center">
   <img alt="Desafio B2W - Star Wars" title="stws" src="https://github.com/diegopgcabral/desafio-b2w-star-wars/blob/master/src/assets/logo.png" width="300px" />
 </h1>
@@ -6,11 +8,10 @@
 <p align="center">Projeto utilizado para construção do desafio da B2W(
   <a href="#gear-back-end">Back-end</a>)</p>
 
-<p align="center">
 [![CircleCI](https://circleci.com/gh/diegopgcabral/desafio-b2w-star-wars/tree/master.svg?style=svg)](https://circleci.com/gh/diegopgcabral/desafio-b2w-star-wars/tree/master)
-</p>
 
-<p align="center">
+
+<p align="right">
   <a href="https://www.codacy.com?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=DanielObara/DesafioFastFeet&amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/764eee83d7604873a9b06d37c4689523"/></a>
 
   <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/danielobara/desafiofastfeet?color=%2304D361">
