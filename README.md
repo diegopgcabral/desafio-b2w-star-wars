@@ -8,6 +8,7 @@
 <p align="center">Projeto utilizado para construção do desafio da B2W(
   <a href="#gear-back-end">Back-end</a>)</p>
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/c3dba062454644ddbeb94024bd92ebb3)](https://app.codacy.com/manual/diegopgcabral/desafio-b2w-star-wars?utm_source=github.com&utm_medium=referral&utm_content=diegopgcabral/desafio-b2w-star-wars&utm_campaign=Badge_Grade_Dashboard)
 [![CircleCI](https://circleci.com/gh/diegopgcabral/desafio-b2w-star-wars/tree/master.svg?style=svg)](https://circleci.com/gh/diegopgcabral/desafio-b2w-star-wars/tree/master)
 
 
