@@ -12,7 +12,7 @@
 
 
 <p align="right">
-  <a href="https://www.codacy.com?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=DanielObara/DesafioFastFeet&amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/764eee83d7604873a9b06d37c4689523"/></a>
+  <a href=></a>
 
   <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/diegopgcabral/desafio-b2w-star-wars?color=%2304D361">
 
