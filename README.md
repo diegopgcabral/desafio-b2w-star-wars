@@ -8,26 +8,7 @@
 
   <a href="https://circleci.com/gh/diegopgcabral/desafio-b2w-star-wars/tree/master"><img src="https://circleci.com/gh/diegopgcabral/desafio-b2w-star-wars/tree/master.svg?style=svg"/></a>
 
-  <a href="https://www.codacy.com/manual/diegopgcabral/desafio-b2w-star-wars?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=diegopgcabral/desafio-b2w-star-wars&amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/05d365f5eaf842a38d89c719b9559d8b"/></a>
 
-  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/diegopgcabral/desafio-b2w-star-wars?color=%2304D361">
-
-  <a href="https://www.linkedin.com/in/diego-pg-cabral/">
-    <img alt="Made by Diego Cabral" src="https://img.shields.io/badge/made%20by-Diego Cabral-%2304D361">
-  </a>
-
-  <img alt="License" src="https://img.shields.io/badge/license-MIT-%2304D361">
-
-  <a>
-    <img alt="Repository size" src="https://img.shields.io/github/repo-size/diegopgcabral/desafio-b2w-star-wars.svg">
-  </a>
-
-  <a href="https://github.com/diegopgcabral/desafio-b2w-star-wars/commits/master">
-    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/diegopgcabral/desafio-b2w-star-wars.svg">
-  </a>
-   <a href="https://github.com/diegopgcabral/desafio-b2w-star-wars/stargazers">
-    <img alt="Stargazers" src="https://img.shields.io/github/stars/diegopgcabral/desafio-b2w-star-wars?style=social">
-  </a>
 </p>
 
 ## :rocket: Tecnologias
