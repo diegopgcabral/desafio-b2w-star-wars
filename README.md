@@ -10,9 +10,8 @@
 
 [![CircleCI](https://circleci.com/gh/diegopgcabral/desafio-b2w-star-wars/tree/master.svg?style=svg)](https://circleci.com/gh/diegopgcabral/desafio-b2w-star-wars/tree/master)
 
-
-<p align="right">
-  <a href=></a>
+<p align="left">
+  <a href="https://www.codacy.com/manual/diegopgcabral/desafio-b2w-star-wars?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=diegopgcabral/desafio-b2w-star-wars&amp;utm_campaign=Badge_Grade"></a>
 
   <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/diegopgcabral/desafio-b2w-star-wars?color=%2304D361">
 
