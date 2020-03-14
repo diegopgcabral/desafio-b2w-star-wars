@@ -54,7 +54,7 @@
 
 ## Instalação API
 
-Para rodar o projeto é necessário possuir [Git](https://git-scm.com), [Node.js](https://nodejs.org/en/) + [Npm](https://www.npmjs.com/) instalados na máquina. Baixe o repositório e entre no diretório raiz do projeto.
+
 
 Na linha de comando do seu terminal:
 
@@ -77,5 +77,5 @@ $ docker-compose stop
 $ npm test
 ```
 
----
+-------
 Diego Cabral :wave: [Linkedin](https://www.linkedin.com/in/diego-pg-cabral/)
