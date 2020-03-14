@@ -4,7 +4,7 @@
   <img alt="Desafio B2W - Star Wars" title="stws" src="https://github.com/diegopgcabral/desafio-b2w-star-wars/blob/master/src/assets/logo.png" width="300px" />
 </h1>
 
-<p align="left">
+<p align="center">
 
   <a href="https://circleci.com/gh/diegopgcabral/desafio-b2w-star-wars/tree/master"><img src="https://circleci.com/gh/diegopgcabral/desafio-b2w-star-wars/tree/master.svg?style=svg"/></a>
 
