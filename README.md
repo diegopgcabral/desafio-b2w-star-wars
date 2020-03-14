@@ -8,6 +8,8 @@
 
   <a href="https://circleci.com/gh/diegopgcabral/desafio-b2w-star-wars/tree/master"><img src="https://circleci.com/gh/diegopgcabral/desafio-b2w-star-wars/tree/master.svg?style=svg"/></a>
 
+  <a href="https://www.codacy.com/manual/diegopgcabral/desafio-b2w-star-wars?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=diegopgcabral/desafio-b2w-star-wars&amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/05d365f5eaf842a38d89c719b9559d8b"/></a>
+
 
 </p>
 
