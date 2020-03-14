@@ -1,8 +1,8 @@
-import axios from 'axios';
 import Planet from '../model/Planet';
 
 import Cache from '../../lib/Cache';
 import Logger from '../../utils/logger';
+import swapi from '../../services/swapi';
 
 class PlanetController {
   async index(req, res) {
@@ -55,8 +55,11 @@ class PlanetController {
       Logger.info(
         `PlanetController::SWAPI => Iniciando consulta de participacoes em filmes.`
       );
-      const response = await axios.get(process.env.SWAPI_URL, {
-        params: { search: req.body.name },
+
+      const response = await swapi.get('planets', {
+        params: {
+          search: req.body.name,
+        },
       });
 
       if (response.data.count > 0) {
