@@ -48,7 +48,7 @@
 
 ## Instalação API
 
-Para clonar e rodar essa aplicação, você vai precisar do [Git](https://git-scm.com), [Node.js](https://nodejs.org/en/) + [Npm](https://www.npmjs.com/) instalados no seu computador.
+Para clonar e rodar essa aplicação, você vai precisar do [Git](https://git-scm.com), [Node.js](https://nodejs.org/en/), [Docker](https://www.docker.com/docker-community) + [Npm](https://www.npmjs.com/) instalados no seu computador.
 
 Na linha de comando do seu terminal:
 
@@ -70,6 +70,32 @@ $ docker-compose stop
 # Para executar os testes do projeto
 $ npm test
 ```
+
+# URL BASE
+* http://localhost:3000
+
+## Endpoints da API
+
+#### Buscar todos os planetas
+* GET /planets
+
+#### Cadastrar um novo planeta
+* POST /planets
+```
+{
+    "name": "Dagobah",
+    "climate": "murky",
+    "terrain": "swamp, jungles"
+}
+```
+#### Buscar planeta por ID
+* GET /planets/id-planeta-desejado
+
+#### Buscar planeta por nome
+* GET /planets/search/nome-planeta-desejado
+
+#### Remover planeta
+* DELETE /planets/nome-planeta-desejado
 
 -------
 Diego Cabral :wave: [Linkedin](https://www.linkedin.com/in/diego-pg-cabral/)

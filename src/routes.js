@@ -185,8 +185,4 @@ routes.get('/planets/search/:name', FilterPlanetController.index);
 // Remover um planeta do BD
 routes.delete('/planets/:name', PlanetController.destroy);
 
-routes.get('/', (req, res) => {
-  return res.status(200).json({ message: 'Desafio B2W - API RESTFul' });
-});
-
 export default routes;
