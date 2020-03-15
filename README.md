@@ -112,4 +112,4 @@ $ npm test
 * DELETE /planets/nome-planeta-desejado
 
 -------
-> Desenvolvido por Diego Cabral [Linkedin](https://www.linkedin.com/in/diego-pg-cabral/)
+> Desenvolvido por Diego Cabral  - [Linkedin](https://www.linkedin.com/in/diego-pg-cabral/)
