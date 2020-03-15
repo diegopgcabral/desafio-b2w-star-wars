@@ -7,7 +7,7 @@ Desafio B2W - API REST Star Wars
 </h2>
 
 <p align="justify">
-- API REST desenvolvida para buscar as informações referente ao planetas dos filmes Star Wars.
+- API REST foi desenvolvida para buscar as informações referente ao planetas dos filmes Star Wars.
 </p>
 
 <p align="justify">
