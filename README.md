@@ -1,5 +1,5 @@
 <h1 align="center">
-Desafio B2W de API Star Wars
+Desafio B2W - API REST Star Wars
 </h1>
 
 <h2 align="center">
