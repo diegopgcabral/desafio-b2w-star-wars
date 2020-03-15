@@ -1,4 +1,3 @@
-# Desafio B2W de API Star Wars
 <h1 align="center">
 Desafio B2W de API Star Wars
 </h1>
@@ -7,12 +6,12 @@ Desafio B2W de API Star Wars
   <img src="https://github.com/diegopgcabral/desafio-b2w-star-wars/blob/master/src/assets/logo.png" width="300px" />
 </h2>
 
-<h2 align="justify">
-API REST desenvolvida para buscar as informações referente ao planetas dos filmes Star Wars.
-</h2>
+<p align="justify">
+- API REST desenvolvida para buscar as informações referente ao planetas dos filmes Star Wars.
+</p>
 
 <p align="justify">
-As informações dos planetas serão obtidas pela API pública do Star Wars: https://swapi.co/
+- As informações dos planetas serão obtidas pela API pública do Star Wars: https://swapi.co/
 </p>
 
 
