@@ -1,8 +1,17 @@
-# Desafio B2W - Star Wars
+# Desafio B2W de API Star Wars
 
 <h1 align="center">
-  <img alt="Desafio B2W - Star Wars" title="stws" src="https://github.com/diegopgcabral/desafio-b2w-star-wars/blob/master/src/assets/logo.png" width="300px" />
+  <img alt="Desafio B2W de API Star Wars" title="stws" src="https://github.com/diegopgcabral/desafio-b2w-star-wars/blob/master/src/assets/logo.png" width="300px" />
 </h1>
+
+<h2 align="justify">
+API REST desenvolvida para buscar as informações referente ao planetas dos filmes Star Wars.
+</h2>
+
+<p align="justify">
+As informações dos planetas serão obtidas pela API pública do Star Wars: https://swapi.co/
+</p>
+
 
 <p align="center">
   <a href="https://circleci.com/gh/diegopgcabral/desafio-b2w-star-wars/tree/master"><img src="https://circleci.com/gh/diegopgcabral/desafio-b2w-star-wars/tree/master.svg?style=svg"/></a>
@@ -98,4 +107,4 @@ $ npm test
 * DELETE /planets/nome-planeta-desejado
 
 -------
-Diego Cabral :wave: [Linkedin](https://www.linkedin.com/in/diego-pg-cabral/)
+> Desenvolvido por Diego Cabral [Linkedin](https://www.linkedin.com/in/diego-pg-cabral/)
