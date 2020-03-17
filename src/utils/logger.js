@@ -10,7 +10,7 @@ const logger = createLogger({
     new transports.File({
       maxsize: 51200000,
       maxFiles: 5,
-      filename: `${__dirname}/../logs/log-api-b2w.log`,
+      filename: `${__dirname}/../logs/api-starwars.log`,
     }),
     // new transports.Console({
     //   level: 'debug',
