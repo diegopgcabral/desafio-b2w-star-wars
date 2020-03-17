@@ -59,7 +59,7 @@ Desafio B2W - API REST Star Wars
 
 ## Instalação API
 
-Para clonar e rodar essa aplicação, você vai precisar do [Git](https://git-scm.com), [Node.js](https://nodejs.org/en/), [Docker](https://www.docker.com/docker-community) + [Npm](https://www.npmjs.com/) instalados no seu computador.
+Para clonar e rodar essa aplicação, você vai precisar do [Git](https://git-scm.com), [Node.js](https://nodejs.org/en/), [Docker](https://www.docker.com/docker-community) + [Docker-Compose](https://docs.docker.com/compose/install/) + [Npm](https://www.npmjs.com/) instalados no seu computador.
 
 Na linha de comando do seu terminal:
 

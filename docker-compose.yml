@@ -11,6 +11,7 @@ services:
       - .:/usr/app
     depends_on:
       - mongo
+      - redis
 
   mongo:
     image: mongo
@@ -22,7 +23,7 @@ services:
       - '27017:27017'
 
   redis:
-    image: redis
+    image: redis:alpine
     container_name: redis-b2w
     command: redis-server
     ports:
