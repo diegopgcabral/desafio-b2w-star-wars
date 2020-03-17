@@ -89,3 +89,7 @@
 [2020-03-14T19:44:58.538Z] info : FilterPlanetController::index => Consultando o planeta Coruscant no BD.
 [2020-03-14T19:45:04.777Z] info : PlanetController::delete =>  Iniciando exclusão do planeta de ID: undefined
 [2020-03-14T19:45:04.796Z] info : PlanetController::delete => Planeta Coruscant removido com sucesso.
+[2020-03-15T19:00:40.018Z] info : PlanetController::index => Iniciando listagem de planeta(s)
+[2020-03-15T19:00:40.046Z] info : PlanetController::index => Planeta(s) retornado(s) com sucesso.
+[2020-03-15T19:00:44.112Z] info : FilterPlanetController::show => Consultando o planeta de ID: 5e6d320b2416cc00a2861893 no BD.
+[2020-03-15T19:00:46.745Z] info : FilterPlanetController::index => Consultando o planeta Coruscant no BD.
