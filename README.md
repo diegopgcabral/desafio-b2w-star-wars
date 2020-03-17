@@ -81,6 +81,8 @@ $ docker-compose stop
 # Para executar os testes do projeto
 $ npm test
 ```
+# DOCUMENTÇÃO
+* http://localhost:3000/api-docs
 
 # URL BASE
 * http://localhost:3000
