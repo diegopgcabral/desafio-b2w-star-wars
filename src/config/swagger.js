@@ -3,9 +3,9 @@ import swaggerJSDoc from 'swagger-jsdoc';
 // swagger definition
 const swaggerDefinition = {
   info: {
-    description: 'API RESTFul de planetas de Star Wars',
+    description: 'Planetas API - B2W Desafio',
     swagger: '2.0',
-    title: 'Desafio B2W Star Wars',
+    title: 'Swagger - API Planetas',
     version: '1.0.0',
   },
   host: 'localhost:3000',

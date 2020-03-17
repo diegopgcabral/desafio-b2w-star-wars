@@ -125,9 +125,7 @@ routes.get('/planets', PlanetController.index);
 // Exibe o planeta de acordo com o id
 routes.get('/planets/:id', FilterPlanetController.show);
 
-/**
- * @swagger
- *
+/** Desafio B2W Star Wars
  * /planets/search/{nome}:
  *   get:
  *     tags:
