@@ -10,8 +10,8 @@ class Cache {
   }
 
   set(key, value) {
-    // Calculo: 60(seg) * 60(min) * 2(dias)
-    return this.redis.set(key, JSON.stringify(value), 'EX', 60 * 60 * 2);
+    // Calculo: 60(seg) * 60(min) * 1(dia)
+    return this.redis.set(key, JSON.stringify(value), 'EX', 60 * 60 * 1);
   }
 
   async get(key) {
